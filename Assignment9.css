@@ -1,0 +1,93 @@
+/* 
+Eamon Lightning
+eamon_lightning@student.uml.edu
+Sound Recording Technology major; Computer Science minor.
+Created on December 9, 2014
+
+This web page displays a table of data relating to the location 
+and population of various cities in the United States. Users may choose 
+to sort the cities by name, state, and population. They may also add 
+to the table dynamically for the purposes of comparing cities 
+not on the list with some of the more well-known cities in the United States. 
+This program uses the AngularJS framework to optimize data binding 
+within the page.
+
+This file is used to give the webpage a little more personality.
+*/
+
+/* Adds some nice rounded edges to the heading, and gives it a little
+bit of depth with the use of a box-shadow. */
+h1 {
+  text-align: center;
+  background-color: #E8C09A;
+  border: solid 2px gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #B0B0B0;
+}
+
+/* Ensures that the width of the table's cells are fixed.
+Adds a subtle background color, which is a bit easier on 
+the eyes. */
+table {
+  table-layout: fixed;
+  width: 0px;
+  background-color: #CFE8D5; 
+  position: relative; 
+  top: 1em; 
+  left: 22em; 
+} 
+
+/* Adds a border to the cells of the table so that the 
+content of table is more visually organized. */
+td, th {
+  border: thin solid gray;
+  width: 140px;
+  text-align: center;
+  background-color: white;
+}
+
+/* Makes table headers stand out for the sake of the sorting process */
+th {
+  cursor: pointer;
+}
+
+/* Add some space between the submit button and fieldset's fields. */
+#submit {
+  margin-top: 5px;
+}
+
+/* Add a border around the form and instructions content, and 
+adds a soft background color. */
+#static_content {
+  border: thin solid black;
+  border-radius: 6px;
+  background-color: #CDE8E1;
+  padding: 5px;
+}
+
+/* Centers the input fields. */
+#static_content fieldset {
+  text-align: center;
+}
+
+#static_content p {
+  text-align: center;
+}
+
+/* Ensures that the vertical scroll bar does not cause the
+layout of the page to change. */ 
+html {
+  overflow-y: scroll;
+}
+
+/* Ensures that if tables become large, the page doesn't 
+follow suit. */
+.table {
+  overflow: scroll;
+}
+
+/* Adds some margins to the page to improve readability. */
+body{
+  margin-right: 4em;
+  margin-left: 4em;
+}

@@ -1,0 +1,153 @@
+[
+    {
+      "state" : "Pennsylvania",
+      "city" : "Philadelphia",
+      "population" : 1547607
+    },
+    
+    {
+      "state" : "Vermont",
+      "city" : "Burlington",
+      "population" : 42417
+    },
+    
+    {
+      "state" : "Missouri",
+      "city" : "Springfield",
+      "population" : 164122
+    },
+    
+    {
+      "state" : "Illinois",
+      "city" : "Chicago",
+      "population" : 2714856
+    },
+    
+    {
+      "state" : "Nebraska",
+      "city" : "Lincoln",
+      "population" : 434353
+    },
+    
+    {
+      "state" : "Kansas",
+      "city" : "Topeka",
+      "population" : 127679
+    },
+    
+    {
+      "state" : "Utah",
+      "city" : "Salt Lake City",
+      "population" : 186440
+    },
+    
+    {
+      "state" : "California",
+      "city" : "San Fransisco",
+      "population" : 825863
+    },
+    
+    {
+      "state" : "Idaho",
+      "city" : "Boise",
+      "population" : 214237
+    },
+    
+    {
+      "state" : "New Mexico",
+      "city" : "Albuquerque",
+      "population" : 545852
+    },
+    
+    {
+      "state" : "Massachusetts",
+      "city" : "Boston",
+      "population" : 636479
+    },
+    
+    {
+      "state" : "Montana",
+      "city" : "Billings",
+      "population" : 109059
+    },
+    
+    {
+      "state" : "Ohio",
+      "city" : "Columbus",
+      "population" : 809798
+    },
+    
+    {
+      "state" : "New Mexico",
+      "city" : "Las Cruces",
+      "population" : 97618
+    },
+    
+    {
+      "state" : "Kansas",
+      "city" : "Wichita",
+      "population" : 386552
+    },
+    
+    {
+      "state" : "Michigan",
+      "city" : "Detroit",
+      "population" : 701475
+    },
+    
+    {
+      "state" : "Idaho",
+      "city" : "Nampa",
+      "population" : 86518
+    },
+    
+    {
+      "state" : "North Carolina",
+      "city" : "Raleigh",
+      "population" : 431746
+    },
+    
+    {
+      "state" : "Texas",
+      "city" : "San Antonio",
+      "population" : 1382951
+    },
+    
+    {
+      "state" : "Utah",
+      "city" : "Provo",
+      "population" : 112488
+    },
+    
+    {
+      "state" : "Oregon",
+      "city" : "Portland",
+      "population" : 609456
+    },
+    
+    {
+      "state" : "North Carolina",
+      "city" : "Greensboro",
+      "population" : 279639
+    },
+    
+    {
+      "state" : "New York",
+      "city" : "New York",
+      "population" : 8336697
+    },
+    
+    {
+      "state" : "Delaware",
+      "city" : "Wilmington",
+      "population" : 71305
+    },
+    
+    {
+      "state" : "Oregon",
+      "city" : "Eugene",
+      "population" : 159190
+    }
+
+  ]
+  

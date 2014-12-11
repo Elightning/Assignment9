@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>US Cities</title>
+
+    <!--
+    
+    Eamon Lightning
+    eamon_lightning@student.uml.edu
+    Sound Recording Technology major; Computer Science minor.
+    Created on December 9, 2014
+
+    This web page displays a table of data relating to the location and population of various cities in the United States. Users may choose to sort the cities by name, state, and population. They may also add to the table dynamically for the purposes of comparing cities not on the list with some of the more well-known cities in the United States. This program uses the AngularJS framework to optimize data binding within the page. 
+
+    -->
+    
+    <!-- Loads the AngularJS library via google's cdn -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+
+    <!-- Links to a css sytle sheet -->
+    <link rel="stylesheet" type="text/css" href="Assignment9.css">
+
+  </head>
+
+  <!-- All angular data binding within the body element will reference the model that is linked to the "myCtrl" controller. -->
+  <body ng-controller="myCtrl" >
+    
+    <h1>US Cities</h1>
+
+    <div id="static_content">
+      <!-- Brief description of the site. -->
+      <p id="about">Hello, and Welcome. Have you ever wondered how your town or city stacks up against some of the more well-known cities in the United States in terms of geographic location or population? If so, you just took a step in the right direction. <br> <br>
+      There are 25 US cities listed in the table below. To sort them based on one of their three characteristics, simply click on the column header that interests you. You can also add another city to the list by filling out the fields in the "Add City" box, and then clicking the "Add City" button. To return to the list's default entries, refresh the page. <br>
+      Go on and try it out!</p>
+
+      <!-- The fieldset element allows users to data relating to the location
+      and population of city, and add it to the table. -->
+      <fieldset>
+        <legend>Add City</legend>
+
+        <!-- This input field links to the "city" data in the model. -->
+        <input type="text" ng-model="city" placeholder="City" ><br />
+        
+        <!-- This input field links to the "state" data in the model. -->
+        <input type="state" ng-model="state" placeholder="State" ><br />
+        
+        <!-- This input field links to the "population" data in the model. -->
+        <input type="number" ng-model="population" placeholder="population" ><br />
+        
+        <!-- When the "Add City" button is clicked, function addCity() is called. -->
+        <button type="button" ng-click="addCity()" id="submit">Add City</button>
+      </fieldset>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <!-- The following code is based on the examples provided by Jesse Heines, which can be found at:
+          https://teaching.cs.uml.edu/~heines/91.461/91.461-2014-15f/461-assn/code/Assn09-Starter/Assn09-Starter-listing.pdf  -->
+          <th ng-click="sortColumn(2)">City</th>
+          <th ng-click="sortColumn(3)">State</th>
+          <th ng-click="sortColumn(4)">Population</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Whenever Data within the model changes, the table is rendered again, which makes adding new data seemless. -->
+        <tr ng-repeat="places in Data | orderBy : sortField : sortDescending">
+          <td>{{places.city}}</td>
+          <td>{{places.state}}</td>
+
+          <!-- the "number" filter adds commas to the population values
+          making them easier to read. -->
+          <td>{{places.population | number}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+
+    // Initially sorts the city column, and sets sort order to ascending. 
+    var lastSortColumnNo = 2 ;
+    var lastSortDescending = false ;
+
+    // Removes the model from the global scope.
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope, $http) {
+
+      /* Retrieves JSON file via an ajax request and stores the data of the retrieved file inside Data. */
+      $http.get("CityData.json").success(function(data) {
+        $scope.Data = data;
+      });
+      $scope.sortField = "city" ;
+      $scope.sortDescending = false ;
+      $scope.sortColumn = function( colNo ) {
+        $scope.sortDescending = lastSortColumnNo === colNo && !lastSortDescending;
+        if ( colNo === 2 ) { $scope.sortField = "city"; } 
+        else if ( colNo === 3 ) { $scope.sortField = "state"; } 
+        else if ( colNo === 4 ) { $scope.sortField = "population"; }
+        lastSortDescending = $scope.sortDescending ;
+        lastSortColumnNo = colNo ;
+      }
+
+        /* The following code is based on the examples provided at: http://stackoverflow.com/questions/21427089/how-to-add-dynamic-row-to-a-table-using-angularjs */
+
+        /* Function addCity binds with the values input in the html fieldset element and stores them in an object that models the same objects found in CityData.json. The place object is pushed to Data, and the table modifies automatically via the magic of Angular's two-way data binding.*/
+        $scope.addCity = function() {
+          var place = {
+          city: $scope.city,
+          state: $scope.state,
+          population: $scope.population
+          };
+          $scope.Data.push(place);
+        };
+    });
+
+    </script>
+
+  </body>
+
+</html>
